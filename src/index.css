@@ -19,3 +19,7 @@
 #regForm .error-lbl{
     color: red;
 }
+
+.table-container table th{
+    cursor: pointer;
+}

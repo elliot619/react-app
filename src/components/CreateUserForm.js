@@ -9,9 +9,8 @@ class CreateUserForm extends React.Component {
             captionReg: "Register a new user",
             captionClose: "Close form",
             caption: "Register a new user",
-            hasError: true,
             errors: "",
-            errorCount: 0
+            errorCount: -1
         };
 
         this.toggleRegForm = this.toggleRegForm.bind(this);
@@ -73,21 +72,33 @@ class CreateUserForm extends React.Component {
         }
 
         this.setState({errors: err});
-        this.setState({hasError: !result});
-        this.setState({errorCount: (result ? this.state.errorCount-- : this.state.errorCount++)});
+        this.setState({errorCount: document.getElementsByClassName("has-error").length});
     }
 
     submit(e) {
-        if (!this.state.hasError) {
+        if (this.state.errorCount === 0) {
+            let firstName = document.getElementsByName("txtFirstName")[0],
+                lastName = document.getElementsByName("txtLastName")[0],
+                address = document.getElementsByName("txtAddress")[0],
+                mail = document.getElementsByName("txtMail")[0],
+                mobile = document.getElementsByName("txtMobile")[0];
+
             const user = {
-                "firstName": document.getElementById("txtFirstName").innerText,
-                "lastName": document.getElementById("txtLastName").innerText,
-                "address": document.getElementById("txtAddress").innerText,
-                "mail": document.getElementById("txtMail").innerText,
-                "phone": document.getElementById("txtMobile").innerText
+                "firstName": firstName.value,
+                "lastName": lastName.value,
+                "address": address.value,
+                "mail": mail.value,
+                "phone": mobile.value
             };
 
+            firstName.value = "";
+            lastName.value = "";
+            address.value = "";
+            mobile.value = "";
+            mail.value = "";
+
             this.props.addUser(user);
+            this.toggleRegForm();
         }
     }
 
@@ -111,7 +122,7 @@ class CreateUserForm extends React.Component {
                     </div>
                     <div className="row">
                         <label htmlFor="txtAddress" className="col-md-2">Address</label>
-                        <input type="text" name="txtFirstName" className="form-control col-md-4" maxLength="30"
+                        <input type="text" name="txtAddress" className="form-control col-md-4" maxLength="30"
                                onChange={this.inputHandling}/>
                     </div>
                     <div className="row">
@@ -126,7 +137,7 @@ class CreateUserForm extends React.Component {
                     </div>
                     <div className="row">
                         <button type="button" className="col-md-2 btn btn-success center-block"
-                                disabled={this.state.hasError}
+                                disabled={this.state.errorCount !== 0}
                                 onClick={this.submit}>Save
                         </button>
                     </div>

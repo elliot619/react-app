@@ -32,8 +32,8 @@ class App extends Component {
     }
 
     usersUpdated(user) {
-        let tmp = UsersJSON.push(user);
-        this.setState({users: tmp})
+        UsersJSON.push(user);
+        this.setState({users: UsersJSON})
     }
 
     searchUser(e) {
@@ -52,8 +52,6 @@ class App extends Component {
             this.setState({users: UsersJSON});
         }
     }
-
-
 }
 
 export default App;

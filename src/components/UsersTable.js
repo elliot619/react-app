@@ -60,11 +60,17 @@ class UserRow extends React.Component {
             <tr>
                 <td>{this.props.data.firstName}</td>
                 <td>{this.props.data.lastName}</td>
-                <td>{this.props.data.phone}</td>
+                <td>{this.normalizePhone(this.props.data.phone)}</td>
                 <td>{this.props.data.mail}</td>
                 <td>{this.props.data.address}</td>
             </tr>
         );
+    }
+
+    normalizePhone(phone) {
+        phone = phone.replace(/[^\d]/g, "");
+        return phone.replace(/(\d{3})(\d{3})(\d{4})/, "($1) $2-$3");
+
     }
 }
 
