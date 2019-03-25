@@ -6,9 +6,9 @@ class CreateUserForm extends React.Component {
         super();
         this.state = {
             showForm: false,
-            captionReg: "Register a new user",
-            captionClose: "Close form",
-            caption: "Register a new user",
+            captionReg: "+ Register a new user",
+            captionClose: "- Close form",
+            caption: "+ Register a new user",
             errors: "",
             errorCount: -1
         };
@@ -90,6 +90,8 @@ class CreateUserForm extends React.Component {
                 "mail": mail.value,
                 "phone": mobile.value
             };
+
+            //TODO:Call to set user trough an http request
 
             firstName.value = "";
             lastName.value = "";

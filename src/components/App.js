@@ -21,8 +21,20 @@ class App extends Component {
     render() {
         return (
             <div>
-                <h1>Users</h1>
                 <SearchBox searchUser={this.searchUser}/>
+
+                <nav className="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+                    <a className="navbar-brand" href="/">Users managing</a>
+                    <div className="collapse navbar-collapse" id="navbarCollapse">
+                        <ul className="navbar-nav mr-auto">
+                        </ul>
+                        <form className="form-inline mt-2 mt-md-0">
+                            <SearchBox searchUser={this.searchUser}/>
+                        </form>
+                    </div>
+                </nav>
+
+
                 <hr/>
                 <CreateUserForm addUser={this.usersUpdated}/>
                 <hr/>
@@ -32,7 +44,7 @@ class App extends Component {
     }
 
     usersUpdated(user) {
-        UsersJSON.push(user);
+        UsersJSON.unshift(user);
         this.setState({users: UsersJSON})
     }
 
