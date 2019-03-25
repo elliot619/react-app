@@ -1,0 +1,72 @@
+[
+  {
+    "firstName": "Juan",
+    "lastName": "P",
+    "address": "fake st 123",
+    "mail": "1@1.com",
+    "phone": "6191235678"
+  },
+  {
+    "firstName": "Ele",
+    "lastName": "P",
+    "address": "fake st 123",
+    "mail": "1@1.com",
+    "phone": "6191235678"
+  },
+  {
+    "firstName": "Fer",
+    "lastName": "P",
+    "address": "fake st 123",
+    "mail": "1@1.com",
+    "phone": "6191235678"
+  },
+  {
+    "firstName": "Gabio",
+    "lastName": "P",
+    "address": "fake st 123",
+    "mail": "1@1.com",
+    "phone": "6191235678"
+  },
+  {
+    "firstName": "Ramon",
+    "lastName": "P",
+    "address": "fake st 123",
+    "mail": "1@1.com",
+    "phone": "6191235678"
+  },
+  {
+    "firstName": "Ale",
+    "lastName": "P",
+    "address": "fake st 123",
+    "mail": "1@1.com",
+    "phone": "6191235678"
+  },
+  {
+    "firstName": "Alfredo",
+    "lastName": "P",
+    "address": "fake st 123",
+    "mail": "1@1.com",
+    "phone": "6191235678"
+  },
+  {
+    "firstName": "Josefa",
+    "lastName": "P",
+    "address": "fake st 123",
+    "mail": "1@1.com",
+    "phone": "6191235678"
+  },
+  {
+    "firstName": "Maria",
+    "lastName": "P",
+    "address": "fake st 123",
+    "mail": "1@1.com",
+    "phone": "6191235678"
+  },
+  {
+    "firstName": "Pepe",
+    "lastName": "P",
+    "address": "fake st 123",
+    "mail": "1@1.com",
+    "phone": "6191235678"
+  }
+]
